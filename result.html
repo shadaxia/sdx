@@ -1,0 +1,73 @@
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>小伙伴回家时间一览表</title>
+    <link href="css/ionic.min.css" rel="stylesheet">
+    <link href="css/vender/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/vender/jquery-1.12.2.min.js"></script>
+    <script src="js/vender/echarts.min.js"></script>
+</head>
+<body>
+
+   <div class="bar bar-header">
+      <a class="padding icon ion-chevron-left"></a>
+      <h1 class="title">投票一览</h1>
+    </div>
+    	<div class="content has-header list ">
+         <div class="item ">
+            <h6 class="item-divider">
+            <span class="pull-right">27人</span>总投票人数：</h6>
+         <div id="fgstreets" style="height:290px;812px;"></div>
+        </div>
+          <div class="item item-body">
+            <div class=" item-divider">
+            详情
+             </div>
+               <ion-list>  <ion-item ng-repeat="item in items">
+    Hello, {{item}}!
+  </ion-item>
+</ion-list></div>
+    </div>
+
+ 
+
+        <script type="text/javascript">
+     var myChart = echarts.init(document.getElementById('fgstreets'));
+        // 指定图表的配置项和数据
+        option = {
+            color:['#EF4129','#535AA8', '#249831', '#009FF0', '#FFB33A'],
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}: {c} ({d}%)"
+            },
+            legend: {
+                itemGap:20,
+                itemWidth:10,
+                itemHeight:10,
+                bottom :0,
+                data:['农历大年23之前','农历大年23-26','农历大年26-30','初一至初六','初六以后']
+            },
+            series: [
+                {
+                    name:'用户比例',
+                    type:'pie',
+                    radius: ['50%', '65%'],
+                    
+               
+                    data:[
+                        {value:335, name:'农历大年23之前'},
+                        {value:310, name:'农历大年23-26'},
+                        {value:234, name:'农历大年26-30'},
+                        {value:135, name:'初一至初六'},
+                        {value:1548, name:'初六以后'}
+                    ]
+                }
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+    </body>
+</html>

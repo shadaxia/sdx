@@ -1,0 +1,55 @@
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>沙塔下小分队</title>
+    <link href="css/ionic.min.css" rel="stylesheet">
+     <link href="css/vender/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/ionic.bundle.min.js"></script>
+    <script type="text/javascript">
+    angular.module('ionicApp', ['ionic'])
+
+    .controller('MyCtrl', function($scope) {
+
+    });
+    </script>
+    <style>
+    body {
+    cursor: url('http://www.runoob.com/static/img/finger.png'), auto;
+    }
+    </style>
+</head>
+<body ng-controller="MyCtrl" >
+
+    	<div class="scroll-content">
+		<div class="list">
+         	<div class="item item-assertive item-button-right text-center">
+             	<h1 class="light">沙塔下小分队</h1>
+          </div>
+			<label class="item item-input">
+				<span class="input-label">用户名</span>
+				<input type="text" placeholder="请输入用户名">
+			</label>
+			<label class="item item-input ">
+				<span class="input-label">密码</span>
+				<input type="password" placeholder="请输入密码">
+			</label>
+				<label class="item item-checkbox">
+				<label class="checkbox">
+					<input type="checkbox" checked>
+				</label>
+				记住密码
+			</label>
+		</div>
+		<div class="padding-left padding-right">
+
+			<button class="button button-block button-stable">登录</button>
+            <div class="clearfix"><div class="pull-left"><i class="fa fa-qq fa-2x mr15"></i><i class="fa fa-wechat fa-2x"></i></div><div class="pull-right">忘记密码？</div>
+        </div>
+            <div class="text-center"><button class="button button-outline  button-assertive ">免费注册</button></div> </div>
+		</div>
+	</div>
+
+    </body>
+</html>
