@@ -7,6 +7,8 @@
     <link href="css/vender/font-awesome.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/vender/jquery-1.12.2.min.js"></script>
+    <script src="js/angular/angular.js"></script>
+     <script src="js/controller/resultController.js"></script>
     <script src="js/vender/echarts.min.js"></script>
 </head>
 <body>
@@ -15,7 +17,7 @@
       <a class="padding icon ion-chevron-left"></a>
       <h1 class="title">投票一览</h1>
     </div>
-    	<div class="content has-header list ">
+    	<div class="scroll-content has-header list ">
          <div class="item ">
             <h6 class="item-divider">
             <span class="pull-right">27人</span>总投票人数：</h6>
@@ -25,15 +27,20 @@
             <div class=" item-divider">
             详情
              </div>
-               <ion-list>  <ion-item ng-repeat="item in items">
-    Hello, {{item}}!
-  </ion-item>
-</ion-list></div>
+             <p>查看某人:
+
+             <input type="text" ng-model="test"></p>
+               <ion-list ng-controller="myCtrl">  
+               <ion-item ng-repeat="x in names | filter:test | orderBy:'time'">
+             {{ (x.name | uppercase) + ', ' + x.time }}
+             </ion-item>
+                </ion-list></div>
     </div>
 
  
 
         <script type="text/javascript">
+
      var myChart = echarts.init(document.getElementById('fgstreets'));
         // 指定图表的配置项和数据
         option = {

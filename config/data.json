@@ -1,0 +1,8 @@
+	{ 
+	 result:
+	  [
+        {name:'Jani',time:'2016-12-10'},
+        {name:'Hege',time:'2016-12-12'},
+        {name:'Kai',time:'2016-12-11'}
+    ]
+}
